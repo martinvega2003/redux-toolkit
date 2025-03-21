@@ -22,12 +22,10 @@ const TaskForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert("This is an alert")
     dispatch(addTask({
       ...task,
       id: uuid()
     }))
-    alert("Alert")
   }
 
   return (
