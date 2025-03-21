@@ -7,7 +7,7 @@ import {v4 as uuid} from "uuid"
 const TaskForm = () => {
 
   const dispatch = useDispatch() // dispatch is used to execute the reducers functions.
-  const tasks = useSelector(state => state.tasks)
+  const tasks = useSelector(state => state.tasks) || [];
   
   const navigate = useNavigate()
 
@@ -19,10 +19,10 @@ const TaskForm = () => {
   })
 
   useEffect(() => {
-    if (params.id) { // If an ID was passed in the url:
+    if (params.id && tasks.length > 0) { // If an ID was passed in the url:
       setTask(tasks.find(task => task.id === params.id)) // Look for a task with that ID and set the task state as the found task
     }
-  })
+  }, [tasks])
 
   const handleChange = e => {
     setTask({
