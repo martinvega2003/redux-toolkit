@@ -33,10 +33,15 @@ const TaskForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(addTask({
-      ...task,
-      id: uuid()
-    }))
+    if (params.id) {
+      //
+    } else {
+      dispatch(addTask({
+        ...task,
+        id: uuid()
+      }))
+    }
+    
     navigate('/')
   }
 
