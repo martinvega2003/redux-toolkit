@@ -5,12 +5,14 @@ import TasksList from './components/TasksList.jsx'
 
 //react-router-dom:
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Navbar from './components/Navbar.jsx'
 
 const App = () => {
   const taskState = useSelector(state => state.tasks) // tasks is the name assigned to taskReducer in store.js
   console.log(taskState)
   return ( // Wrap the App with the redux Provider and pass the store as prop
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path='/' element={<TasksList />} />
         <Route path='/create-task' element={<TaskForm />} />
