@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { addTask } from '../features/tasks/taskSlice'
 import {v4 as uuid} from "uuid"
 
@@ -7,6 +8,8 @@ const TaskForm = () => {
 
   const dispatch = useDispatch() // dispatch is used to execute the reducers functions.
   const tasks = useSelector(state => state.tasks)
+  
+  const navigate = useNavigate()
 
   const [task, setTask] = useState({
     title: "",
@@ -26,6 +29,7 @@ const TaskForm = () => {
       ...task,
       id: uuid()
     }))
+    navigate('/')
   }
 
   return (
