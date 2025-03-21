@@ -42,8 +42,8 @@ const TaskForm = () => {
 
   return (
     <form>
-      <input name='title' type='text' placeholder='Task title' onChange={handleChange} />
-      <textarea name='description' placeholder='Task description' onChange={handleChange}></textarea>
+      <input name='title' type='text' placeholder='Task title' onChange={handleChange} value={task.title} />
+      <textarea name='description' placeholder='Task description' onChange={handleChange} value={task.description}></textarea>
       <button onClick={handleSubmit} className='cursor-pointer border-2 border-blue-400'>Save</button>
     </form>
   )
