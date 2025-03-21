@@ -7,6 +7,16 @@ export const taskSlice = createSlice({
     addTask: (state, action) => { // state is the current state and action is the parameter, which is an object with keys: name and payload (Payload being the value)
       state.push(action.payload) // As state is the array, the action.payload (value) is pushed
     },
+    editTask: (state, action) => {
+      const {id, title, description} = action.payload // These are the edited title and description
+      const foundTask = state.find(task => task.id === id)
+
+      //Update Task data
+      if (foundTask) {
+        foundTask.title = title 
+        foundTask.description = description
+      }
+    },
     deleteTask: (state, action) => { // action.payload is the id, action.type is the reducer executed (deleteTask)
       const taskFound = state.find(task => task.id === action.payload)
       if (taskFound) {
@@ -16,6 +26,6 @@ export const taskSlice = createSlice({
   }
 })
 
-export const {addTask, deleteTask} = taskSlice.actions // Export the reducers
+export const {addTask, deleteTask, editTask} = taskSlice.actions // Export the reducers
 
 export default taskSlice.reducer // We import the reducer of the slice by default.
