@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { addTask } from '../features/tasks/taskSlice'
 import {v4 as uuid} from "uuid"
 
@@ -11,9 +11,17 @@ const TaskForm = () => {
   
   const navigate = useNavigate()
 
+  const params = useParams()
+
   const [task, setTask] = useState({
     title: "",
     description: "",
+  })
+
+  useEffect(() => {
+    if (params.id) { // If an ID was passed in the url:
+      setTask(tasks.find(task => task.id === params.id)) // Look for a task with that ID and set the task state as the found task
+    }
   })
 
   const handleChange = e => {
