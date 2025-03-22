@@ -8,7 +8,7 @@ const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(ThemeModeContext);
 
   return (
-    <div className='fixed top-0 bg-white w-full py-4 flex justify-end items-center shadow-2xl'>
+    <div className='fixed top-0 bg-white w-full h-24 py-4 flex justify-end items-center shadow-2xl'>
       <button 
         onClick={() => setDarkMode(!darkMode)} 
         className='mx-2 text-zinc-900 hover:text-blue-600 text-4xl transition duration-300 cursor-pointer hover:scale-110'
