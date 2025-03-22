@@ -13,7 +13,7 @@ const App = () => {
   console.log(taskState)
   return ( // Wrap the App with the redux Provider and pass the store as prop
     <ThemeModeProvider>
-      <div className="dark:bg-zinc-900 text-black dark:text-white h-screen">
+      <div className="dark:bg-zinc-900 text-black dark:text-white h-screen flex items-center justify-center">
         <BrowserRouter>
           <Navbar />
           <Routes>
