@@ -46,10 +46,14 @@ const TaskForm = () => {
   }
 
   return (
-    <form>
-      <input name='title' type='text' placeholder='Task title' onChange={handleChange} value={task.title} />
-      <textarea name='description' placeholder='Task description' onChange={handleChange} value={task.description}></textarea>
-      <button onClick={handleSubmit} className='cursor-pointer border-2 border-blue-400'>Save</button>
+    <form className='bg-neutral-800 max-w-sm p-4 text-white'>
+      <label htmlFor="title" className="block text-xs font-bold mb-2">Title:</label>
+      <input className='w-full p-2 rounded-2xl bg-neutral-600 mb-2' name='title' type='text' placeholder='Task title' onChange={handleChange} value={task.title} />
+
+      <label htmlFor="description" className="block text-xs font-bold mb-2">Description:</label>
+      <textarea className='w-full p-2 rounded-2xl bg-neutral-600 mb-2' name='description' placeholder='Task description' onChange={handleChange} value={task.description}></textarea>
+
+      <button className='bg-indigo-600 hover:bg-indigo-900 px-4 py-2 rounded-md transition duration-300 cursor-pointer' onClick={handleSubmit}>Save</button>
     </form>
   )
 }
