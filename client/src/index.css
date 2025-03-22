@@ -2,5 +2,5 @@
 @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 body {
-  padding-top: 100px;
+  padding-top: 96px;
 }
