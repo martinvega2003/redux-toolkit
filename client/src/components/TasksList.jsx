@@ -13,7 +13,7 @@ const TasksList = () => {
   }
 
   return (
-    <div className='grid grid-cols-3 gap-4 px-4 sm:px-12'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 px-4 sm:px-12'>
       {tasks.map(task => {
         return (
           <div key={task.id} className='bg-neutral-800 text-white p-4 rounded-2xl'>
