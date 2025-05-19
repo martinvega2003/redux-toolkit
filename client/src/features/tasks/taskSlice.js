@@ -22,10 +22,16 @@ export const taskSlice = createSlice({
       if (taskFound) {
         state.splice(state.indexOf(taskFound), 1)
       }
+    },
+    completeTask: (state, action) => { // action.payload is the id, action.type is the reducer executed (deleteTask)
+      const taskFound = state.find(task => task.id === action.payload)
+      if (taskFound) {
+        taskFound.completed = !taskFound.completed;
+      }
     }
   }
 })
 
-export const {addTask, deleteTask, editTask} = taskSlice.actions // Export the reducers
+export const {addTask, deleteTask, editTask, completeTask} = taskSlice.actions // Export the reducers
 
 export default taskSlice.reducer // We import the reducer of the slice by default.
