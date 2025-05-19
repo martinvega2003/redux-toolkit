@@ -26,19 +26,19 @@ const TasksList = () => {
               <div className="flex gap-x-2">
                 <button 
                   onClick={() => handleComplete(task.id)} 
-                  className='bg-green-500 hover:bg-transparent hover:text-green-500 px-2 py-1 text-xs rounded-2xl border-2 border-green-500 transition duration-300 cursor-pointer'
+                  className='h-fit bg-green-500 hover:bg-transparent hover:text-green-500 px-2 py-1 text-xs rounded-2xl border-2 border-green-500 transition duration-300 cursor-pointer'
                 >Complete</button>
                 <button 
                   onClick={() => handleDelete(task.id)} 
-                  className='bg-red-500 hover:bg-transparent hover:text-red-500 px-2 py-1 text-xs rounded-2xl border-2 border-red-500 transition duration-300 cursor-pointer'
+                  className='h-fit bg-red-500 hover:bg-transparent hover:text-red-500 px-2 py-1 text-xs rounded-2xl border-2 border-red-500 transition duration-300 cursor-pointer'
                 >Delete</button>
                 <Link  
                   to={`/edit-task/${task.id}`} 
-                  className='bg-zinc-600 hover:bg-transparent hover:text-zinc-600 px-2 py-1 text-xs rounded-2xl border-2 border-zinc-600 transition duration-300 cursor-pointer'
+                  className='h-fit bg-zinc-600 hover:bg-transparent hover:text-zinc-600 px-2 py-1 text-xs rounded-2xl border-2 border-zinc-600 transition duration-300 cursor-pointer'
                 >Edit</Link>
               </div>
             </header>
-            <p className={`text-md overflow-x-scroll ${task.completed ? 'line-through' : ''}`}>{task.description}</p>
+            <p className={`text-md overflow-x-scroll ${task.completed ? 'line-through' : ''} mt-6`}>{task.description}</p>
           </div>
         )
       })}
